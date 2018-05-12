@@ -25,7 +25,8 @@ let spellChecker = (txt, arr) => {
   return retArr
 }
 console.log("1. Spellchecker function that takes array of items and a string and returns suggestion based on the strings:")
-console.log(spellChecker('caf', ['cat','cap', 'cast', 'castle', 'cod']))
+console.log("caf: ", spellChecker('caf', ['cat','cap', 'cast', 'castle', 'cod']))
+console.log("cad: ", spellChecker('cad', ['cat','cap', 'cast', 'castle', 'cod']))
 
 
 // 2. Implement an algorithm to determine if a string has all unique characters. 
