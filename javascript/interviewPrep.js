@@ -85,6 +85,7 @@ console.log('abc: ', removeDupChar('abc'))
 // ('asdf','qwer')
 
 let isAnagram = (a,b) => {
+	if (a.length !== b.length) return false
 	let aSort = a.split('').sort().toString()
 	let bSort = b.split('').sort().toString()
 	return (aSort == bSort)
@@ -97,7 +98,7 @@ console.log("'asdf','qwer': ", isAnagram('asdf','qwer'))
 // 4b. Dont use sort.
 
 let isAnagramNoSort = (a,b) => {
-	
+	if (a.length !== b.length) return false
 	let mapChars = a => {
 		let charMap = new Map() 
 		for(let i = 0; i<a.length; i++){
@@ -109,7 +110,7 @@ let isAnagramNoSort = (a,b) => {
 		}
 		return charMap
 	}
-	
+
 	let aMap = mapChars(a)
 
 	for(let i = 0; i<b.length; i++){
