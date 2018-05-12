@@ -36,4 +36,23 @@ let allUnique = (str) => {
 	return (Array.from(strSet).length == str.length)
 }
 console.log("2. Unique string function that takes a string and return if all the characters are unique:")  
-console.log(allUnique('abcc'))
+console.log('abcc: ', allUnique('abcc'))
+console.log('abc: ', allUnique('abc'))
+  
+// 2. b. What if you can not use additional data structures? 
+  
+//we assume only ascii characters 
+  
+let allUniqueB = (str) => {
+	let hasChar = new Array(255)
+
+	for(let i = 0; i<str.length; i++){
+			console.log(str.charCodeAt(i))
+			
+			
+	}
+	return (Array.from(strSet).length == str.length)
+}
+console.log("2b. Unique string function that takes a string and return if all the characters are unique (without extra datastructures):")  
+console.log('abcc: ', allUniqueB('abcc'))
+console.log('abc: ', allUniqueB('abc'))
