@@ -41,8 +41,7 @@ console.log('abcc: ', allUnique('abcc'))
 console.log('abc: ', allUnique('abc'))
   
 // 2. b. What if you can not use additional data structures? 
-  
-//we assume only ascii characters 
+// we assume only ascii characters 
   
 let allUniqueB = (str) => {
 	let hasChar = new Array(255)
@@ -59,3 +58,22 @@ let allUniqueB = (str) => {
 console.log("2b. Unique string function that takes a string and return if all the characters are unique (without extra datastructures):")  
 console.log('abcc: ', allUniqueB('abcc'))
 console.log('abc: ', allUniqueB('abc'))
+
+// 3. Design an algorithm and write code to remove the duplicate characters in a string
+// without using any additional buffer
+
+let removeDupChar = (str) => {
+	for(let i = 0;i < str.length;i++) {
+		for(let j = 0; j < i; j++){
+			if(str[i] == str[j]){
+				str = str.substring(0,j) + str.substring(j+1, str.length)
+				i--
+			}
+		}
+	}
+	return str
+}
+
+console.log("3. Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer:")  
+console.log('aaaaabbbbccccc: ', removeDupChar('aaaaabbbbccccc'))
+console.log('abc: ', removeDupChar('abc'))
