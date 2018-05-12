@@ -47,11 +47,13 @@ let allUniqueB = (str) => {
 	let hasChar = new Array(255)
 
 	for(let i = 0; i<str.length; i++){
-			console.log(str.charCodeAt(i))
-			
-			
+		if(hasChar[str.charCodeAt(i)] == undefined){
+			hasChar[str.charCodeAt(i)] = true	
+		} else {
+			return false
+		}
 	}
-	return (Array.from(strSet).length == str.length)
+	return true
 }
 console.log("2b. Unique string function that takes a string and return if all the characters are unique (without extra datastructures):")  
 console.log('abcc: ', allUniqueB('abcc'))
