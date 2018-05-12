@@ -93,3 +93,35 @@ let isAnagram = (a,b) => {
 console.log("\nWrite a method to decide if two strings are anagrams or not:")  
 console.log("'asdf','fdsa': ", isAnagram('asdf','fdsa'))
 console.log("'asdf','qwer': ", isAnagram('asdf','qwer'))
+
+// 4b. Dont use sort.
+
+let isAnagramNoSort = (a,b) => {
+	
+	let mapChars = a => {
+		let charMap = new Map() 
+		for(let i = 0; i<a.length; i++){
+			if(charMap.has(a[i])){
+				charMap.set(a[i], charMap.get(a[i]) + 1)
+			} else {
+				charMap.set(a[i], 1)
+			}
+		}
+		return charMap
+	}
+	
+	let aMap = mapChars(a)
+
+	for(let i = 0; i<b.length; i++){
+		if (aMap.has(b[i]) && aMap.get(b[i]) > 0){
+			aMap.set(b[i], aMap.get(b[i]) - 1)
+		} else {
+			return false
+		}
+	}
+	return true
+}
+
+console.log("\nWrite a method to decide if two strings are anagrams or not without using sort:")  
+console.log("'asdf','fdsa': ", isAnagramNoSort('asdf','fdsa'))
+console.log("'asdf','qwer': ", isAnagramNoSort('asdf','qwer'))
