@@ -36,7 +36,7 @@ let allUnique = (str) => {
 	let strSet = new Set(str.slice(''))
 	return (Array.from(strSet).length == str.length)
 }
-console.log("2. Unique string function that takes a string and return if all the characters are unique:")  
+console.log("\n2. Unique string function that takes a string and return if all the characters are unique:")  
 console.log('abcc: ', allUnique('abcc'))
 console.log('abc: ', allUnique('abc'))
   
@@ -55,7 +55,7 @@ let allUniqueB = (str) => {
 	}
 	return true
 }
-console.log("2b. Unique string function that takes a string and return if all the characters are unique (without extra datastructures):")  
+console.log("\n2b. Unique string function that takes a string and return if all the characters are unique (without extra datastructures):")  
 console.log('abcc: ', allUniqueB('abcc'))
 console.log('abc: ', allUniqueB('abc'))
 
@@ -74,6 +74,22 @@ let removeDupChar = (str) => {
 	return str
 }
 
-console.log("3. Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer:")  
+console.log("\n3. Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer:")  
 console.log('aaaaabbbbccccc: ', removeDupChar('aaaaabbbbccccc'))
 console.log('abc: ', removeDupChar('abc'))
+
+
+// 4. Write a method to decide if two strings are anagrams or not.
+
+// ('asdf','fdsa')
+// ('asdf','qwer')
+
+let isAnagram = (a,b) => {
+	let aSort = a.split('').sort().toString()
+	let bSort = b.split('').sort().toString()
+	return (aSort == bSort)
+}
+
+console.log("\nWrite a method to decide if two strings are anagrams or not:")  
+console.log("'asdf','fdsa': ", isAnagram('asdf','fdsa'))
+console.log("'asdf','qwer': ", isAnagram('asdf','qwer'))
