@@ -91,7 +91,7 @@ let isAnagram = (a,b) => {
 	return (aSort == bSort)
 }
 
-console.log("\nWrite a method to decide if two strings are anagrams or not:")  
+console.log("\n4. Write a method to decide if two strings are anagrams or not:")  
 console.log("'asdf','fdsa': ", isAnagram('asdf','fdsa'))
 console.log("'asdf','qwer': ", isAnagram('asdf','qwer'))
 
@@ -123,6 +123,22 @@ let isAnagramNoSort = (a,b) => {
 	return true
 }
 
-console.log("\nWrite a method to decide if two strings are anagrams or not without using sort:")  
+console.log("\n4b. Write a method to decide if two strings are anagrams or not without using sort:")  
 console.log("'asdf','fdsa': ", isAnagramNoSort('asdf','fdsa'))
 console.log("'asdf','qwer': ", isAnagramNoSort('asdf','qwer'))
+
+// 5. Write a method to replace all spaces in a string with ‘%20’.
+
+let encodeSpaces = (str) => {
+	for(let i = 0;i<str.length;i++){
+		if(str[i] == ' '){
+			str = `${str.substring(0,i)}%20${str.substring(i+1,str.length)}`
+			i+=2
+		}
+	}
+	return str
+}
+
+console.log("\n5. Write a method to replace all spaces in a string with ‘%20’.:")  
+console.log("'this is a sample string': ", encodeSpaces('this is a sample string'))
+console.log("' ': ", encodeSpaces(' '))
