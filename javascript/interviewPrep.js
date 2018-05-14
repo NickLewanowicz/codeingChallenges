@@ -142,3 +142,94 @@ let encodeSpaces = (str) => {
 console.log("\n5. Write a method to replace all spaces in a string with ‘%20’.:")  
 console.log("'this is a sample string': ", encodeSpaces('this is a sample string'))
 console.log("' ': ", encodeSpaces(' '))
+
+// 6. Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees.
+let m = [
+	[1,1,1],
+	[0,0,0],
+	[1,1,1]
+]
+
+//Will revisit, want to do in linear number of iterations
+let rotateMatrix = (m) => {
+	let size = m.length
+	let row = -1
+	let col = -1
+	let curr = null
+	let temp = 0
+	for(let i = 0; i<size*size;i++) {
+		if(curr == null){
+			if(col < size - row - 1){ƒ
+				col++
+				curr = m[row][col]
+				temp = col
+				col = size - row - 1
+				row = temp
+				next = m[row][col]
+			} else {
+				row++
+				col = row
+				curr = m[row][col]
+				col = size - row - 1
+				next = m[row][col]
+			}
+		} else { 
+			m[row][col] = curr
+			curr = next
+			
+			if(i%4 == 0){
+				temp = col
+				col = size - row - 1
+				row = temp
+			}else if (i%4 == 1){
+
+			}else if (i%4 == 2){
+				
+			}else if (i%4 == 3){
+				
+			}
+		}
+	}
+}
+
+
+
+// 7. Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0
+
+let m1 = [
+	[1,1,1],
+	[1,0,1],
+	[1,1,1]
+]
+
+let clearRowCol = (arr) => {
+	let m = arr.length
+	let n = arr[0].length
+	let isRowZero = new Array(m)
+	let isColZero = new Array(n)
+	for(let i = 0; i < m; i++){
+		for(let j = 0; j<n; j++){
+			if(arr[i][j] == 0){
+				isRowZero[i] = arr[i][j] == 0
+				isColZero[j] = arr[i][j] == 0
+			}
+		}
+	}
+	for(let i = 0; i < m; i++){
+		if(isRowZero[i]){
+			arr[i].fill(0)
+		}
+	}
+	for(let i = 0; i < n; i++){
+		if(isColZero[i]){
+			for(let j = 0; j < m; j++){
+				arr[j][i] = 0
+			}
+		}
+	}
+	
+	return arr
+}
+
+console.log("\n7. Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0:")  
+console.log(" [ 1, 1, 1 ], [ 1, 0, 1 ], [ 1, 1, 1 ] ]': ", clearRowCol(m1))
