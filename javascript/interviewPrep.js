@@ -247,4 +247,4 @@ let isRotation = (s1, s2) => {
 
 console.log("\n8. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1:")  
 console.log("'waterbottle', 'erbottlewat' : ", isRotation('waterbottle', 'erbottlewat'))
-console.log("'waterbottle', 'erbottlewat' : ", isRotation('test', 'testing'))
+console.log("'test', 'testing' : ", isRotation('test', 'testing'))
