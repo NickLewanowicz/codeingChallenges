@@ -233,3 +233,18 @@ let clearRowCol = (arr) => {
 
 console.log("\n7. Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0:")  
 console.log(" [ 1, 1, 1 ], [ 1, 0, 1 ], [ 1, 1, 1 ] ]': ", clearRowCol(m1))
+
+
+// 8. Assume you have a method isSubstring which checks if one word is a substring of
+//    another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using
+//    only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
+
+let isRotation = (s1, s2) => {
+	return `${s2}${s2}`.includes(s1) && s1.length == s2.length
+
+}
+
+
+console.log("\n8. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1:")  
+console.log("'waterbottle', 'erbottlewat' : ", isRotation('waterbottle', 'erbottlewat'))
+console.log("'waterbottle', 'erbottlewat' : ", isRotation('test', 'testing'))
