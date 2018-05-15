@@ -248,3 +248,49 @@ let isRotation = (s1, s2) => {
 console.log("\n8. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1:")  
 console.log("'waterbottle', 'erbottlewat' : ", isRotation('waterbottle', 'erbottlewat'))
 console.log("'test', 'testing' : ", isRotation('test', 'testing'))
+
+
+// 9. Implement a MyQueue class which implements a queue using two stacks.
+
+class MyQueue {
+	constructor() {
+		this.front = []
+		this.back = []
+	}
+
+	length() {
+		return this.front.length + this.back.length
+	}
+
+	enqueue(i) {
+		this.back.push(i)
+		return `[${this.front.slice().reverse()}${(this.back.length > 0 && this.front.length > 0) ? ',' : ''}${this.back}]`
+	}
+	dequeue(i) {
+		const error = "Cannot Dequeue"
+		if( this.front.length == 0 && this.back.length == 0){
+			return error
+		} else if(this.front.length == 0 && this.back.length > 0) {
+			while(this.back.length > 0){
+				this.front.push(this.back.pop())
+			}
+		}
+		
+		return this.front.pop()
+	}
+	toString() {
+		return `[${this.front.slice().reverse()}${this.back}]`
+	}
+}
+
+let myq = new MyQueue()
+
+console.log(myq.length)
+console.log(myq.enqueue(1))
+console.log(myq.enqueue(2))
+console.log(myq.enqueue(3))
+console.log(myq.dequeue())
+console.log(myq.dequeue())
+console.log(myq.dequeue())
+console.log(myq.dequeue())
+console.log(myq.toString())
